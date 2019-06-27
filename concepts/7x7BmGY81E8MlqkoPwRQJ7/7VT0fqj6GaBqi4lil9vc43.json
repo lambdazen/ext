@@ -1,0 +1,57 @@
+{
+  "uri" : "local://7VT0fqj6GaBqi4lil9vc43/",
+  "name" : "ext-common.jsx",
+  "category" : "",
+  "parent" : "local://7x7BmGY81E8MlqkoPwRQJ7/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "_dll_fileName",
+    "expr" : {
+      "str" : "ext-common.jsx",
+      "strEditMode" : "",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_dll_packageJson",
+    "expr" : {
+      "json" : { },
+      "type" : "JSON"
+    }
+  }, {
+    "name" : "_dll_jsContent",
+    "expr" : {
+      "str" : "//test1\nimport React from 'react';\nimport { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';\nimport CssBaseline from '@material-ui/core/CssBaseline';\n\n// A theme for all Concept Extention Views.\nconst theme = createMuiTheme({\n    typography: {\n        fontFamily: 'Oxygen' // Open Sans\n    },\n    palette: {\n      primary: {\n        light: \"#6ab7ff\",\n        main: \"#1e88e5\",\n        dark: \"#005cb2\",\n        contrastText: \"#f5f5f5\",\n      },\n      secondary: {\n        light: \"#ffce48\",\n        main: \"#ff9d00\",\n        dark: \"#c66e00\",\n        contrastText: \"#f5f5f5\"\n      },\n      error: {\n        light: \"#f05545\",\n        main: \"#b71c1c\",\n        dark: \"#7f0000\",\n        contrastText: \"#f5f5f5\",\n      },\n      background: {\n        \"default\": \"#eee\"\n      }, \n    },\n})\n\nfunction withRoot(Component) {\n  function WithRoot(props) {\n    // MuiThemeProvider makes the theme available down the React tree\n    // thanks to React context.\n    return (\n        <MuiThemeProvider theme={theme}>\n                <div>\n                    {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}\n                    <CssBaseline />\n                    <Component {...props} />\n                </div>\n        </MuiThemeProvider>\n    );\n  }\n\n  return WithRoot;\n}\n\nexport { withRoot, theme}",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_dll_dlls",
+    "expr" : {
+      "json" : [ {
+        "uri" : "/common/core/_VLDu6x8INAmEq56qQiGyA/"
+      }, {
+        "uri" : "/common/core/X226f4wwwF9TsKUtUjNyV2/"
+      }, {
+        "uri" : "/common/core/Xy0GpUtiPwAhgqd5z9d9lF/"
+      } ],
+      "type" : "JSON"
+    }
+  }, {
+    "name" : "dll",
+    "expr" : {
+      "concept" : "/common/core/clElJPnCOqAeEaijaouLX8/",
+      "bindings" : {
+        "fileName" : "_dll_fileName",
+        "packageJson" : "_dll_packageJson",
+        "jsContent" : "_dll_jsContent",
+        "dlls" : "_dll_dlls"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "dll"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

@@ -1,0 +1,54 @@
+{
+  "uri" : "local://JM5btbqIC2ArL4-6fyXYI6/",
+  "name" : "ssjs-ext-view.jsx",
+  "category" : "",
+  "parent" : "local://7x7BmGY81E8MlqkoPwRQJ7/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "_jsxResource_jsContent",
+    "expr" : {
+      "str" : "//test1\nimport React from 'react';\nimport {withStyles} from '@material-ui/core/styles';\n\nimport {CJSEditor} from 'common/core/K2tlYKPORu9hj4DzPma0H2/entry.js';\nimport {withRoot, theme} from 'localS://7VT0fqj6GaBqi4lil9vc43/entry.js';\n\nconst ssjsUri = \"/common/core/30kVfcSl3k8Q_Kubtcb631/\";\n\nconst styles = {\n  root: {\n    flexGrow: 1\n  },\n  flex: {\n    flex: 1,\n  }\n}\n\nclass SSJSViewImpl extends React.Component {\n    state = { \n        code: \"//type your code here\"\n    };\n    \n    constructor(props) {\n        super(props);\n    }\n\n    componentDidMount () {\n        var self = this;\n        if (this.props.conc && !_.isEmpty(this.props.conc)){\n            try{\n                //TODO change to async calls\n                var ssjsConc = $cjs(this.props.conc.uri).as(ssjsUri);\n                this.setState({ code: ssjsConc.prop(\"jsContent\").val() });\n            }catch(err){\n                console.log(\"failed to cast concept to SSJS\");\n            }\n            //this.setState({ code: _.values(this.props.conc.properties)[0].jsContent });\n        }\n    }\n\n    render() {\n        var self = this;\n        const { code } = this.state;\n        const { classes } = this.props;\n\n        return (\n            <div>\n                <CJSEditor\n                    width=\"1400\"\n                    height=\"1200\"\n                    language=\"javascript\"\n                    code={code}>\n                </CJSEditor>\n            </div>\n        );\n    }\n};\n\nvar SSJSView = withRoot(withStyles(styles)(SSJSViewImpl));\n\nexport default SSJSView;\n\n",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_jsxResource_fileName",
+    "expr" : {
+      "str" : "ssjs-ext-view.jsx",
+      "strEditMode" : "",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_jsxResource_dlls",
+    "expr" : {
+      "json" : [ {
+        "uri" : "/common/core/_VLDu6x8INAmEq56qQiGyA/"
+      }, {
+        "uri" : "/common/core/X226f4wwwF9TsKUtUjNyV2/"
+      }, {
+        "uri" : "/common/core/Xy0GpUtiPwAhgqd5z9d9lF/"
+      }, {
+        "uri" : "/common/core/K2tlYKPORu9hj4DzPma0H2/"
+      }, {
+        "uri" : "/common/core/LG8JhQH_KGBbTauAJer_BB/"
+      } ],
+      "type" : "JSON"
+    }
+  }, {
+    "name" : "jsxResource",
+    "expr" : {
+      "concept" : "/common/core/30kVfcSl3k8Q_Kubtcb631/",
+      "bindings" : {
+        "jsContent" : "_jsxResource_jsContent",
+        "fileName" : "_jsxResource_fileName",
+        "dlls" : "_jsxResource_dlls"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "jsxResource"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}

@@ -1,0 +1,54 @@
+{
+  "uri" : "local://JhFFj1fZq695MaP5BkNmy2/",
+  "name" : "html-ext-view.jsx",
+  "category" : "",
+  "parent" : "local://7x7BmGY81E8MlqkoPwRQJ7/",
+  "flags" : "U",
+  "lvars" : [ ],
+  "vars" : [ {
+    "name" : "_jsxResource_jsContent",
+    "expr" : {
+      "str" : "//test1\nimport React from 'react';\nimport {withStyles} from '@material-ui/core/styles';\nimport Toolbar from '@material-ui/core/Toolbar';\nimport {CJSEditor} from 'common/core/K2tlYKPORu9hj4DzPma0H2/entry.js';\nimport {withRoot, theme} from 'localS://7VT0fqj6GaBqi4lil9vc43/entry.js';\nimport AppBar from '@material-ui/core/AppBar';\nimport Typography from '@material-ui/core/Typography';\nimport IconButton from '@material-ui/core/IconButton';\nimport MenuIcon from '@material-ui/icons/Menu';\nimport AccountCircle from '@material-ui/icons/AccountCircle';\nimport Switch from '@material-ui/core/Switch';\nimport FormControlLabel from '@material-ui/core/FormControlLabel';\nimport FormGroup from '@material-ui/core/FormGroup';\nimport MenuItem from '@material-ui/core/MenuItem';\nimport Menu from '@material-ui/core/Menu';\nimport  {makeStyles} from 'material-ui/styles';\nconst htmlUri = \"/common/core/iduwOQ2KZv8MWqamwqb6AE/\";\n\nconst styles = {\n  root: {\n    flexGrow: 1\n  },\n  flex: {\n    flex: 1,\n  }\n}\n\n\nclass HTMLViewImpl extends React.Component {\n  \n    state = { \n        code: \"//type your html here\"\n    };\n    \n    constructor(props) {\n        super(props);\n        this.state = { width: 0, height: 0 };\n        this.updateWindowDimensions = this.updateWindowDimensions.bind(this);\n    }\n\n    componentDidMount () {\n        this.updateWindowDimensions();\n        window.addEventListener('resize', this.updateWindowDimensions);\n        var self = this;\n        if (this.props.conc && !_.isEmpty(this.props.conc)){\n            try{\n                //TODO change to async calls\n                var htmlConc = $cjs(this.props.conc.uri).as(htmlUri);\n                this.setState({ code: htmlConc.prop(\"html\").val() });\n            }catch(err){\n                console.log(\"failed to cast concept to HTML\");\n            }\n        }\n    }\n    componentWillUnmount() {\n    window.removeEventListener('resize', this.updateWindowDimensions);\n    }\n    updateWindowDimensions() {\n    this.setState({ width: window.innerWidth, height: window.innerHeight });\n    }\n    \n    render() {\n        var self = this;\n        const { code } = this.state;\n        const { classes } = this.props;\n\n        return (\n            <div>\n                <CJSEditor\n                    width={this.state.width}\n                    height={this.state.height}\n                   \n                    language=\"html\"\n                    code={code}>\n                </CJSEditor>\n            </div>\n        );\n    }\n};\n\nclass MenuBar extends React.Component{\nconst useStyles = makeStyles(theme => ({\n  root: {\n    flexGrow: 1,\n  },\n  menuButton: {\n    marginRight: theme.spacing(2),\n  },\n  title: {\n    flexGrow: 1,\n  },\n});\n  const classes = useStyles();\n  const [auth, setAuth] = React.useState(true);\n  const [anchorEl, setAnchorEl] = React.useState(null);\n  const open = Boolean(anchorEl);\n\n  function handleChange(event) {\n    setAuth(event.target.checked);\n  }hh,,\n\n  function handleMenu(event) {\n    setAnchorEl(event.currentTarget);\n  }\n\n  function handleClose() {\n    setAnchorEl(null);\n  }\n\n  return (\n    <div className={classes.root}>\n      <FormGroup>\n        <FormControlLabel\n          control={<Switch checked={auth} onChange={handleChange} aria-label=\"LoginSwitch\" />}\n          label={auth ? 'Logout' : 'Login'}\n        />\n      </FormGroup>\n      <AppBar position=\"static\">\n        <Toolbar>\n          <IconButton edge=\"start\" className={classes.menuButton} color=\"inherit\" aria-label=\"Menu\">\n            <MenuIcon />\n          </IconButton>\n          <Typography variant=\"h6\" className={classes.title}>\n            Photos\n          </Typography>\n          {auth && (\n            <div>\n              <IconButton\n                aria-label=\"Account of current user\"\n                aria-controls=\"menu-appbar\"\n                aria-haspopup=\"true\"\n                onClick={handleMenu}\n                color=\"inherit\"\n              >\n                <AccountCircle />\n              </IconButton>\n              <Menu\n                id=\"menu-appbar\"\n                anchorEl={anchorEl}\n                anchorOrigin={{\n                  vertical: 'top',\n                  horizontal: 'right',\n                }}\n                keepMounted\n                transformOrigin={{\n                  vertical: 'top',\n                  horizontal: 'right',\n                }}\n                open={open}\n                onClose={handleClose}\n              >\n                <MenuItem onClick={handleClose}>Profile</MenuItem>\n                <MenuItem onClick={handleClose}>My account</MenuItem>\n              </Menu>\n            </div>\n          )}\n        </Toolbar>\n      </AppBar>\n    </div>\n  );\n}\n\nvar HTMLView = withRoot(withStyles(styles)(HTMLViewImpl));\n\n\nexport default HTMLView;\n\n",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_jsxResource_fileName",
+    "expr" : {
+      "str" : "html-ext-view.jsx",
+      "strEditMode" : "",
+      "type" : "STRING"
+    }
+  }, {
+    "name" : "_jsxResource_dlls",
+    "expr" : {
+      "json" : [ {
+        "uri" : "/common/core/_VLDu6x8INAmEq56qQiGyA/"
+      }, {
+        "uri" : "/common/core/X226f4wwwF9TsKUtUjNyV2/"
+      }, {
+        "uri" : "/common/core/Xy0GpUtiPwAhgqd5z9d9lF/"
+      }, {
+        "uri" : "/common/core/K2tlYKPORu9hj4DzPma0H2/"
+      }, {
+        "uri" : "/common/core/LG8JhQH_KGBbTauAJer_BB/"
+      } ],
+      "type" : "JSON"
+    }
+  }, {
+    "name" : "jsxResource",
+    "expr" : {
+      "concept" : "/common/core/30kVfcSl3k8Q_Kubtcb631/",
+      "bindings" : {
+        "jsContent" : "_jsxResource_jsContent",
+        "fileName" : "_jsxResource_fileName",
+        "dlls" : "_jsxResource_dlls"
+      },
+      "type" : "CONCEPT"
+    }
+  } ],
+  "isas" : [ {
+    "var" : "jsxResource"
+  } ],
+  "encodedidxhash" : "",
+  "isLambda" : false
+}
